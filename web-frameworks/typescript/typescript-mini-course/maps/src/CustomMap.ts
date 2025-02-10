@@ -1,0 +1,45 @@
+// Instructs classes on how they can be an argument to "addMarker"
+export interface Mappable {
+  location: {
+    lat: number;
+    lng: number;
+  };
+  markerContent(): string;
+  color: string;
+}
+
+export class CustomMap {
+  private googleMap: google.maps.Map;
+
+  constructor(divElement: string) {
+    this.googleMap = new google.maps.Map(
+      document.getElementById(divElement) as HTMLElement,
+      {
+        zoom: 1,
+        center: {
+          lat: 0,
+          lng: 0,
+        },
+        mapId: "Main_Map_Is_Fun",
+      }
+    );
+  }
+
+  addMarker(mappable: Mappable): void {
+    const marker = new google.maps.marker.AdvancedMarkerElement({
+      map: this.googleMap,
+      position: {
+        lat: mappable.location.lat,
+        lng: mappable.location.lng,
+      },
+    });
+
+    marker.addListener("click", () => {
+      const infoWindow = new google.maps.InfoWindow({
+        content: mappable.markerContent(),
+      });
+
+      infoWindow.open(this.googleMap, marker);
+    });
+  }
+}
