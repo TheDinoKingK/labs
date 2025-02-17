@@ -1,0 +1,2 @@
+if you want to use checkout and create a new branch in one line
+just use "git checkout -b [branch name]"

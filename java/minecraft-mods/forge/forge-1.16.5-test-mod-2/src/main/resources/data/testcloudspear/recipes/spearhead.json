@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "testcloudspear:rock"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "result": {
+    "item": "testcloudspear:spearhead"
+  }
+}
+
+// TODO: add the spearhead and crafting recipe for a spear...
