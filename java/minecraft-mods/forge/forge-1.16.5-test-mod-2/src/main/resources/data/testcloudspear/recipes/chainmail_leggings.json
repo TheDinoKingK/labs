@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XAX",
+    "X A",
+    "X A"
+  ],
+  "key": {
+    "X": {
+      "item": "testcloudspear:silver_ingot"
+    },
+    "A": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "minecraft:chainmail_leggings"
+  }
+}
+
+// TODO: change the whole recipe to be made with "chainmail" which can be made through blast furnace smelting silver to "chainmail"
