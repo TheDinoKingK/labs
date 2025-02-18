@@ -4,3 +4,5 @@ came across an issue with docker integeration, this was due to me using docker-d
 
 tried a few things, deleting the .kube/config file to make it fix itself, (didn't work)
 disabled kubernetes in docker-desktop, didn't seem to fix anything
+
+currently this is still broken. but I'm dealing with it and moving on
