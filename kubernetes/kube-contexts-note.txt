@@ -1,0 +1,4 @@
+make sure you're using the right kubernetes context for the cluster you wanna use
+
+so If I wanna start using the Docker Desktop cluster, I'll switch the Docker Desktop context to that via the tray-icon menu
+same thing for Rancher Desktop or similar 'emulators' (for a lack of a better word.)
