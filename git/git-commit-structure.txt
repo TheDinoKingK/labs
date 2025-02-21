@@ -1,0 +1,3 @@
+some new ways to commit new changes
+
+1. git commit -m "commit message" with -a automatically adds all files that haven't been staged when commiting, very nice time save

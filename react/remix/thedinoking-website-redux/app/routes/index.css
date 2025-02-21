@@ -1,0 +1,7 @@
+@tailwind base;
+
+@layer base {
+  html {
+    @apply text-green-500;
+  }
+}

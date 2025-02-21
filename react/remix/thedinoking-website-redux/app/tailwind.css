@@ -1,0 +1,50 @@
+@import url("https://api.fontshare.com/v2/css?f[]=pally@1&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+  .wght-thin {
+    font-variation-settings: "wght" 100;
+  }
+  .wght-extralight {
+    font-variation-settings: "wght" 200;
+  }
+  .wght-light {
+    font-variation-settings: "wght" 300;
+  }
+  .wght-normal {
+    font-variation-settings: "wght" 400;
+  }
+  .wght-medium {
+    font-variation-settings: "wght" 500;
+  }
+  .wght-semibold {
+    font-variation-settings: "wght" 600;
+  }
+  .wght-bold {
+    font-variation-settings: "wght" 700;
+  }
+  .wght-extrabold {
+    font-variation-settings: "wght" 800;
+  }
+  .wght-black {
+    font-variation-settings: "wght" 900;
+  }
+}
+
+body {
+  background-color: theme("colors.sky.300");
+}
+
+/* @font-face {
+    font-family: 'helsinkiregular';
+    src: url('helsinki-webfont.eot');
+    src: url('helsinki-webfont.eot?#iefix') format('embedded-opentype'),
+         url('helsinki-webfont.woff2') format('woff2'),
+         url('helsinki-webfont.woff') format('woff'),
+         url('helsinki-webfont.ttf') format('truetype'),
+         url('helsinki-webfont.svg#helsinkiregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+} */
