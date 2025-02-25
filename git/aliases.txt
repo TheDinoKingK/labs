@@ -1,0 +1,4 @@
+Just learned that you can add aliases to git commands
+common use would be for pretty git log, since typing out `git log --all --decorate --oneline --graph` takes so much time
+you can just setup an alias with `git config --global alias.adog "log --all --decorate --oneline --graph"` 
+and then use `git adog` to print the same thing!
