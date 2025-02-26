@@ -1,6 +1,6 @@
-# Programming labs!
+# Labs
 
-## a bunch of random code from me learning specific languages or just snippets / notes of stuff I find useful  
-## also contains almost everything that wasn't in production or was scrapped
+This repo is meant both as an archive, and quick reference guide for future me  
+containing many old projects I learned to create and many notes / templates for almost everything I use  
 
-There are also readmes on what each project does and where I learned it from (if it did come from a course)
+_(detailed readmes are coming soon.)_
