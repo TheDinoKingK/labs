@@ -8,7 +8,7 @@ this was also the first time I'm developing in the apple mac ecosystem (notes on
 
 Dependences:
 - Node (v22+)
-- .NET (9.0+)
+- .NET (9.02+)
 - I think thats it
 
 once downloaded, just run `dotnet watch` in root directory for a localhost run.

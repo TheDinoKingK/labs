@@ -1,3 +1,5 @@
 some new ways to commit new changes
 
-1. git commit -m "commit message" with -a automatically adds all files that haven't been staged when commiting, very nice time save
+1. git commit -m "commit message" with -a automatically adds all files that have been modified or deleted but NOT new files that haven't been staged
+
+2. git commit without the -m option can be pretty useful if you want to add a changelog due to having too many changes to talk about (but I think it's probably better to make smaller commits anyway due to simplicity down the line)
