@@ -1,0 +1,2 @@
+new command: 'k config set-context --current --namespace=me
+alie' (moves you into a different namespace besides default)
