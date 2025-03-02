@@ -1,0 +1,2 @@
+I think just grabbing via "-o yaml" is mostly how it works.
+'--dry-run' also seems to be used a bit too
