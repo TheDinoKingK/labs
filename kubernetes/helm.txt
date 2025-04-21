@@ -1,0 +1,22 @@
+helm install [name] [repo id] --n homarr --create-namespace (creates helm app or something)
+
+helm ls -A (lists all apps)
+
+helm repo list (lists helm repos)
+helm repo update (git pull but for helm repos)
+
+helm show values [repo id] shows the value.yaml of an app (pipe to less for convinence)
+
+helm upgrade (similar to helm install, used to update values.yaml file)
+
+helm uninstall -n [namespace] [name] uninstalls an app!
+
+
+
+
+
+
+
+
+
+

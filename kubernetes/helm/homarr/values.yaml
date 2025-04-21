@@ -1,0 +1,23 @@
+replicaCount: 2 
+
+podLabels:
+  hello: world
+
+
+
+env:
+  # -- Your local time zone
+  TZ: "Europe/Amsterdam"
+ 
+persistence:
+  homarrDatabase:
+    enabled: true
+    #storageClassName: "default"
+    size: "1Gi"
+ 
+# Service configuration
+service:
+  # -- Enable service
+  enabled: true
+  # -- Service type
+  type: LoadBalancer

@@ -1,0 +1,16 @@
+`: deploy` usually searches the type of kube.. thing?
+for example, deploy, svc (services), pvc (private volume claim), pod, etc.
+
+/ searches within logs, pods, etc. (just like vim!)
+
+
+
+? prints shortcuts
+l checks logs for pods (very helpful
+d describes pods
+s goes into pod shell
+y prints yaml code for a pod
+shift + f port forwards
+shift + s sorts by status (completed, starting up, etc.)
+shift + a sorts by time (newest pods get shown at the top)
+
