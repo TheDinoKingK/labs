@@ -487,3 +487,5 @@ $RECYCLE.BIN/
 # custom ignore rules
 API/appsettings.json
 API/reactivities.db
+dot-net/reactivities/API/reactivities.db-shm
+dot-net/reactivities/API/reactivities.db-wal
