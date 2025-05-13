@@ -19,7 +19,7 @@ export default function ActivityDashboard({ activities, cancelSelectActivity, se
         />
       </Grid>
       <Grid size={5}>
-        {activities[0] && <ActivityDetail 
+        {selectedActivity && <ActivityDetail 
           activity={selectedActivity}
           cancelSelectedActivity={cancelSelectActivity}
         />}
