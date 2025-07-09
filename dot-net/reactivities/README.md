@@ -11,4 +11,5 @@ Dependences:
 - .NET (9.02+)
 - I think thats it
 
-once downloaded, just run `dotnet watch` in root directory for a localhost run.
+once downloaded, just run `dotnet watch` in API directory for the database
+and run `npm run dev` in the Client directory to run the frontend
