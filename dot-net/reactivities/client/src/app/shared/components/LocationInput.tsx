@@ -22,7 +22,7 @@ export default function LocationInput<T extends FieldValues>(props: Props<T>) {
     }
   }, [field.value])
 
-  // change API_KEY to your free api key
+  // change API_KEY to your free api key 
   const locationUrl = 'https://api.locationiq.com/v1/autocomplete?key=API_KEY&limit=5&dedupe=1&'
 
 
