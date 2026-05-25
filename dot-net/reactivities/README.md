@@ -17,3 +17,5 @@ Dependences:
 
 once downloaded, just run `dotnet watch` in API directory for the database
 and run `npm run dev` in the Client directory to run the frontend
+
+if you want the map to work properly just replace `api_key` with your own free key from locationIQ

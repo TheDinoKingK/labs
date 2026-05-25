@@ -19,6 +19,7 @@
     "@mui/x-date-pickers": "^8.10.0",
     "@tanstack/react-query": "^5.81.5",
     "@tanstack/react-query-devtools": "^5.81.5",
+    "@vitejs/plugin-basic-ssl": "^2.1.0",
     "axios": "^1.9.0",
     "date-fns": "^4.1.0",
     "leaflet": "^1.9.4",

@@ -23,8 +23,8 @@ export default function LocationInput<T extends FieldValues>(props: Props<T>) {
   }, [field.value])
 
   // change API_KEY to your free api key 
-  const locationUrl = 'https://api.locationiq.com/v1/autocomplete?key=API_KEY&limit=5&dedupe=1&'
-
+  const api_key = "pk.a0d8b5ec3f8d52c946016246dff00ac6";
+  const locationUrl = `https://api.locationiq.com/v1/autocomplete?key=${api_key}&limit=5&dedupe=1&`
 
   const fetchSuggestions = useMemo(
     () => debounce(async (query: string) => {
