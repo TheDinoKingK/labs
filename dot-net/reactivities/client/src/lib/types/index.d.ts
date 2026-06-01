@@ -14,6 +14,12 @@ type Activity = {
   isHost: boolean
   hostId: string
   hostDisplayName: string
+  hostImageUrl: string
+}
+
+type Photo = {
+  id: string
+  url: string
 }
 
 type Profile = {
@@ -25,7 +31,7 @@ type Profile = {
 
 type User = {
   id: string
-  email:string
+  email: string
   displayName: string
   imageUrl?: string
 }
