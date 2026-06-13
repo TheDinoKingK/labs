@@ -1,6 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import agent from "../api/agent";
 import { useMemo } from "react";
+import type { EditProfileSchema } from "../schemas/editProfileSchema";
 
 export const useProfile = (id?: string) => {
   const queryClient = useQueryClient();
@@ -24,7 +25,7 @@ export const useProfile = (id?: string) => {
       return response.data;
     },
     onSuccess: async (photo: Photo) => {
-      // proabbly should do this for all queries, but I don't think it matters too much?
+      // probably should do this for all queries, but I don't think it matters too much?
       await queryClient.invalidateQueries({
         queryKey: ['photos', id]
       });
@@ -93,6 +94,29 @@ export const useProfile = (id?: string) => {
     return id === queryClient.getQueryData<User>(['user'])?.id
   }, [id, queryClient]);
 
+  const editProfile = useMutation({
+    mutationFn: async (profile: EditProfileSchema) => {
+      await agent.put(`/profiles`, profile)
+    },
+    onSuccess: (_, profile) => {
+      queryClient.setQueryData(['profile', id], (data: Profile) => {
+        if (!data) return data;
+        return {
+          ...data,
+          displayName: profile.displayName,
+          bio: profile.bio
+        }
+      });
+      queryClient.setQueryData(['user'], (userData: User) => {
+        if (!userData) return userData;
+        return {
+          ...userData,
+          displayName: profile.displayName
+        }
+      });
+    }
+  })
+
   return {
     profile,
     loadingProfile,
@@ -101,6 +125,7 @@ export const useProfile = (id?: string) => {
     isCurrentUser,
     uploadPhoto,
     setMainPhoto,
-    deletePhoto
+    deletePhoto,
+    editProfile
   }
 }
