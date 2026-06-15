@@ -3,7 +3,7 @@ import agent from "../api/agent";
 import { useMemo } from "react";
 import type { EditProfileSchema } from "../schemas/editProfileSchema";
 
-export const useProfile = (id?: string) => {
+export const useProfile = (id?: string, predicate?: string) => {
   const queryClient = useQueryClient();
 
   const { data: profile, isLoading: loadingProfile } = useQuery<Profile>({
@@ -12,7 +12,7 @@ export const useProfile = (id?: string) => {
       const response = await agent.get<Profile>(`/profiles/${id}`);
       return response.data
     },
-    enabled: !!id
+    enabled: !!id && !predicate
   });
 
   const uploadPhoto = useMutation({
@@ -52,8 +52,18 @@ export const useProfile = (id?: string) => {
       const response = await agent.get<Photo[]>(`/profiles/${id}/photos`);
       return response.data;
     },
-    enabled: !!id
+    enabled: !!id && !predicate
   });
+
+  const { data: followings, isLoading: loadingFollowings } = useQuery<Profile[]>({
+    queryKey: ['followings', id, predicate],
+    queryFn: async () => {
+      const response =
+        await agent.get<Profile[]>(`/profiles/${id}/follow-list?predicate=${predicate}`);
+      return response.data;
+    },
+    enabled: !!id && !!predicate
+  })
 
   const setMainPhoto = useMutation({
     // could implement optimistic loading or something like that if i wanted
@@ -117,6 +127,25 @@ export const useProfile = (id?: string) => {
     }
   })
 
+    const updateFollowing = useMutation({
+    mutationFn: async () => {
+      await agent.post(`/profiles/${id}/follow`)
+    },
+    onSuccess: () => {
+      queryClient.setQueryData(['profile', id], (profile: Profile) => {
+        queryClient.invalidateQueries({queryKey: ['followings', id, 'followers']})
+        if (!profile || profile.followersCount === undefined) return profile;
+        return {
+          ...profile,
+          following: !profile.following,
+          followersCount: profile.following
+            ? profile.followersCount - 1
+            : profile.followersCount + 1
+        }
+      })
+    },
+  })
+
   return {
     profile,
     loadingProfile,
@@ -126,6 +155,9 @@ export const useProfile = (id?: string) => {
     uploadPhoto,
     setMainPhoto,
     deletePhoto,
-    editProfile
+    editProfile,
+    updateFollowing,
+    followings,
+    loadingFollowings
   }
 }

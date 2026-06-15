@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Popover from '@mui/material/Popover';
-import Typography from '@mui/material/Typography';
 import { Link } from 'react-router';
 import { Avatar } from '@mui/material';
 import ProfileCard from '../../../features/profiles/ProfileCard';
@@ -27,6 +26,10 @@ export default function AvatarPopover({ profile }: Props) {
       <Avatar
         alt={profile.displayName + " image"}
         src={profile.imageUrl}
+        sx={{
+          border: profile.following ? 3 : 0,
+          borderColor: 'secondary.main'
+        }}
         component={Link}
         to={`/profiles/${profile.id}`}
         onMouseEnter={handlePopoverOpen}
