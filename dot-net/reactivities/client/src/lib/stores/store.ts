@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import CounterStore from "./counterStore";
-import { UiStore } from "./UiStore";
+import { UiStore } from "./uiStore";
 import { ActivityStore } from "./activityStore";
 
 interface Store {
